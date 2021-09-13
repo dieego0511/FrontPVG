@@ -1,0 +1,49 @@
+<button class="{{name}}" (click)="open(content)">{{tittle}}</button>
+
+<ng-template #content let-modal>
+	<div class="modal-header bg-primary">
+	    <h4 class="modal-title mx-auto col-l8 text-white" id="modal-basic-title">Registrar Citas</h4>
+	    <button type="button" class="close col-l4" aria-label="Close" (click)="modal.dismiss('Cross click')">
+	      <span aria-hidden="true">&times;</span>
+	    </button>
+    </div>
+    <div class="modal-body">
+<!--     	<p>{{patient?.name}}</p> -->
+	    <form>
+	    	<div class="form-group col-lg-12">
+ 			     <!-- <div ngbDropdown class="d-inline-block">
+			      <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>Toggle dropdown</button>
+			      <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+			        <button ngbDropdownItem>Action - 1</button>
+			        <button ngbDropdownItem>Another Action</button>
+			        <button *ngFor="let patient of patients" (click)="selectPatient(patient)" ngbDropdownItem >{{ patient.name }}</button>
+      			  </div>
+		    	</div>  --> 
+		    	<label for="exampleInputObser">Paciente</label>
+		    	<select class="form-control" id="pCategory" name="pCategory" [(ngModel)]="inputPacId" [ngModelOptions]="{standalone: true}">
+	                <option value="" disabled>Selecciona un Paciente</option>
+	                <option *ngFor="let patient of patients" [ngValue]="patient.id">{{ patient.name }}</option>
+            	</select>
+		    </div>
+		    <div class="form-group col-lg-12">
+			    <label for="exampleInputObser">Observaciónes</label>
+			    <input type="text" class="form-control" id="exampleInputObser" placeholder="Observacion" [(ngModel)]="inputObservations" [ngModelOptions]="{standalone: true}">
+		    </div>
+			<div class="modal-footer">
+				    <div class="d-flex justify-content-center col-lg-12-mx-auto">
+				    	   <button
+						      type="button"
+						      class="btn btn-outline-success"
+						      (click)="modal.close()">
+						      {{tittle.split(' ')[0]}}
+						    </button>
+				    	 
+				    </div>
+			</div>
+		  
+
+		</form>
+  	</div>
+</ng-template>
+
+
