@@ -8,9 +8,9 @@ import { Observable } from "rxjs";
 })
 export class CitasService {
 
-  public apiURL2='http://localhost:8000/api/citas/';
-
-  public apiURL1='http://localhost:8000/api/patient/';
+  public apiURL2='https://stormy-harbor-94839.herokuapp.com/api/citas';
+  //public apiURL2='http://127.0.0.1:8000/api/citas';
+  public apiURL1='https://stormy-harbor-94839.herokuapp.com/api/patient/';
 
 
   constructor(private httpCli: HttpClient) { }
@@ -24,13 +24,13 @@ export class CitasService {
 
   }
 
-  createC(citas: {pac_id:number , observatios:string}): Observable<any> {
+  createC(citas: {pac_id:number , observations:string}): Observable<any> {
     return this.httpCli.post(this.apiURL2, citas);
   }
 
 
 
   deleteC(id: number): Observable<any> {
-    return  this.httpCli.delete(this.apiURL2+id);
+    return  this.httpCli.delete(this.apiURL2+"/"+id);
   }
 }

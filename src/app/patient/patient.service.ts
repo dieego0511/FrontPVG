@@ -10,7 +10,7 @@ import { Observable } from "rxjs";
 })
 export class PatientService {
 
-  public apiURL='http://localhost:8000/api/patient/';
+  public apiURL='https://stormy-harbor-94839.herokuapp.com/api/patient';
 
 
   constructor(private httpCli: HttpClient) { }
@@ -24,10 +24,10 @@ export class PatientService {
   }
 
   edit(patient: {id:number, name:string,email:string, phone:number}): Observable<any> {
-    return this.httpCli.put(this.apiURL+patient.id, patient );
+    return this.httpCli.put(this.apiURL+"/"+patient.id, patient );
   }
 
   delete(id: number): Observable<any> {
-    return  this.httpCli.delete(this.apiURL+id);
+    return  this.httpCli.delete(this.apiURL+"/"+id);
   }
 }

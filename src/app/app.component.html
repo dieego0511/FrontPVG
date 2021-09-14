@@ -3,6 +3,34 @@
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+
+      <li class="nav-item">
+        <button
+          type="button"
+          class="btn btn-outline-light"
+          routerLink="/first-component"
+          routerLinkActive="active"
+        >
+        Pacientes
+        </button>      
+      </li>
+
+      <li class="nav-item">
+        <button
+          type="button"
+          class="btn btn-outline-light"
+          routerLink="/second-component"
+          routerLinkActive="active"
+        >
+        Citas
+        </button>      
+      </li>
+      
+    </ul>
+  </div>
 </nav>
-<app-patient></app-patient>
-<app-citas></app-citas>
+<router-outlet></router-outlet>
+<!-- <app-patient></app-patient>
+<app-citas></app-citas> -->

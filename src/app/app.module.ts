@@ -9,6 +9,7 @@ import { ModalpatientComponent } from './modalpatient/modalpatient.component';
 import { FormsModule } from '@angular/forms';
 import { CitasComponent } from './citas/citas.component';
 import { ModalcitasComponent } from './modalcitas/modalcitas.component';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { ModalcitasComponent } from './modalcitas/modalcitas.component';
     NgbModule,
     HttpClientModule,
     FormsModule,
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

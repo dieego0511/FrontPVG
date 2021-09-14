@@ -35,7 +35,7 @@ export class CitasComponent implements OnInit {
     })
   }
 
-  createCitas(citas: {pac_id:number , observatios:string}) {
+  createCitas(citas: {pac_id:number , observations:string}) {
     this.citaServ.createC(citas).subscribe(data => data);
     this.getAllCitas();
   }
